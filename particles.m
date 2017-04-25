@@ -1,57 +1,29 @@
+
+
 ParticleDefinitions[GaugeES] = {
-      {HdR,  { 
-                 PDG -> 0,
+      {H0,  {    PDG -> {0},
                  Width -> 0, 
                  Mass -> Automatic,
-                 FeynArtsNr -> 101,
-                 LaTeX -> "H_{dR}^{-1/2}",
-                 OutputName -> "HdR" }},                         
-      {HdI,  {   
-                 PDG -> 0,
+                 FeynArtsNr -> 1,
+                 LaTeX -> "H^0",
+                 OutputName -> "H0" }},                         
+      
+      
+      {Hp,  {    PDG -> {0},
                  Width -> 0, 
                  Mass -> Automatic,
-                 FeynArtsNr -> 102,
-                 LaTeX -> "H_{dI}^{-1/2}",
-                 OutputName -> "HdI" }}, 
-     {HuR,  { 
-                 PDG -> 0,
-                 Width -> 0, 
-                 Mass -> Automatic,
-                 FeynArtsNr -> 103,
-                 LaTeX -> "H_{uR}^{1/2}",
-                 OutputName -> "HuR" }},                         
-      {HuI,  {   
-                 PDG -> 0,
-                 Width -> 0, 
-                 Mass -> Automatic,
-                 FeynArtsNr -> 104,
-                 LaTeX -> "H_{uI}^{1/2}",
-                 OutputName -> "HuI" }}, 
-      {phi1,  { 
-                 PDG -> 0,
-                 Width -> 0, 
-                 Mass -> Automatic,
-                 FeynArtsNr -> 105,
-                 LaTeX -> "\[phi]_1",
-                 OutputName -> "phi1" }},                         
-      {phi2,  {   
-                 PDG -> 0,
-                 Width -> 0, 
-                 Mass -> Automatic,
-                 FeynArtsNr -> 106,
-                 LaTeX -> "\[phi]_2",
-                 OutputName -> "phi2" }}, 
-      {phi0,  {   
-                 PDG -> 0,
-                 Width -> 0, 
-                 Mass -> Automatic,
-                 FeynArtsNr -> 107,
-                 LaTeX -> "\[phi]_0",
-                 OutputName -> "phi0" }}, 
+                 FeynArtsNr -> 2,
+                 LaTeX -> "H^+",
+                 OutputName -> "Hp" }}, 
+                 
                
     
-      {VWDB,  { Description -> "WD-Bosons"}},          
-      {gWDB,  { Description -> "W-Boson Ghost"}}
+      {VB,   { Description -> "B-Boson"}},                                                   
+      {VG,   { Description -> "Gluon"}},          
+      {VWB,  { Description -> "W-Bosons"}},          
+      {gB,   { Description -> "B-Boson Ghost"}},                                                   
+      {gG,   { Description -> "Gluon Ghost" }},          
+      {gWB,  { Description -> "W-Boson Ghost"}}
       
       };
       
@@ -59,45 +31,74 @@ ParticleDefinitions[GaugeES] = {
       
       
   ParticleDefinitions[EWSB] = {
-    {SdR0   ,  {  Description -> "Scalar Down Higgs",
-                 PDG -> {125,135},
-                 PDG.IX -> {111000001,111000002} }}, 
+            
+      
+    {hh   ,  {  Description -> "Higgs",
+                 PDG -> {25},
+                 PDG.IX -> {101000001} }}, 
                  
-     {HdI   ,  {  Description -> "Pseudo-Scalar Down Higgs",
+     {Ah   ,  {  Description -> "Pseudo-Scalar Higgs",
                  PDG -> {0},
                  PDG.IX ->{0},
                  Mass -> {0},
                  Width -> {0} }},                       
       
       
-     {SuR1,     { Description -> "Scalar Up Higgs", 
-                 PDG -> {0,137},
-                 PDG.IX ->{0, 110000601},
-                 Width -> {0, External}, 
-                 Mass -> {0, LesHouches},
-                 LaTeX -> {"S_{uR1}^1","S_{uR1}^2"},
-                 ElectricCharge -> 1,                 
-                 OutputName -> {"SuR1_1","SuR1_2"}
+     {Hp,     { Description -> "Charged Higgs", 
+                 PDG -> {0},
+                 PDG.IX ->{0},
+                 Width -> {0}, 
+                 Mass -> {0},
+                 LaTeX -> {"H^+","H^-"},
+                 OutputName -> {"Hp","Hm"}
                  }},                                                   
-      {SuI2,     { Description -> "Pseudo-Scalar Up Higgs", 
-                 PDG -> {0,138},
-                 PDG.IX ->{0, 110000602},
-                 Width -> {0, External}, 
-                 Mass -> {0, LesHouches},
-                 LaTeX -> {"S_{uI2}^1","S_{uI2}^2"},
-                 ElectricCharge -> 1,                 
-                 OutputName -> {"SuI2_1","SuI2_2"}
-                 }},                                                   
-      {VPD,   { Description -> "Dark-Photon",
-      			 Goldstone -> HdI }}, 
-      {VWDp,  { Description -> "A+ -Boson",
-      			Goldstone -> SuR1[{1}] }},         
-      {conj[VWDp],  { Description -> "Negative A+ -Boson",
-      			Goldstone -> SuI2[{1}] }},         
-      {gPD,   { Description -> "Dark Photon Ghost"}},                                                   
-      {gWDp,  { Description -> "Positive A+ - Boson Ghost"}}, 
-      {gWDpC, { Description -> "Negative A+ - Boson Ghost" }}, 
-      };    
-
+      
+      {VP,   { Description -> "Photon"}}, 
+      {VZ,   { Description -> "Z-Boson",
+      			 Goldstone -> Ah }}, 
+      {VG,   { Description -> "Gluon" }},          
+      {VWp,  { Description -> "W+ - Boson",
+      			Goldstone -> Hp }},         
+      {gP,   { Description -> "Photon Ghost"}},                                                   
+      {gWp,  { Description -> "Positive W+ - Boson Ghost"}}, 
+      {gWpC, { Description -> "Negative W+ - Boson Ghost" }}, 
+      {gZ,   { Description -> "Z-Boson Ghost" }},
+      {gG,   { Description -> "Gluon Ghost" }},          
+                               
+                 
+      {Fd,   { Description -> "Down-Quarks"}},   
+      {Fu,   { Description -> "Up-Quarks"}},   
+      {Fe,   { Description -> "Leptons" }},
+      {Fv,   { Description -> "Neutrinos" }}                                                              
+     
+        };    
+        
+        
+        
  WeylFermionAndIndermediate = {
-        }; 
+     
+    {H,      {   PDG -> {0},
+                 Width -> 0, 
+                 Mass -> Automatic,
+                 LaTeX -> "H",
+                 OutputName -> "" }},
+
+   {dR,     {LaTeX -> "d_R" }},
+   {eR,     {LaTeX -> "e_R" }},
+   {lep,     {LaTeX -> "l" }},
+   {uR,     {LaTeX -> "u_R" }},
+   {q,     {LaTeX -> "q" }},
+   {eL,     {LaTeX -> "e_L" }},
+   {dL,     {LaTeX -> "d_L" }},
+   {uL,     {LaTeX -> "u_L" }},
+   {vL,     {LaTeX -> "\\nu_L" }},
+
+   {DR,     {LaTeX -> "D_R" }},
+   {ER,     {LaTeX -> "E_R" }},
+   {UR,     {LaTeX -> "U_R" }},
+   {EL,     {LaTeX -> "E_L" }},
+   {DL,     {LaTeX -> "D_L" }},
+   {UL,     {LaTeX -> "U_L" }}
+        };       
+
+

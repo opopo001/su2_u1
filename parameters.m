@@ -1,69 +1,54 @@
 ParameterDefinitions = { 
 
-{g,        { Description -> "Gauge-Coupling"}},
+{g1,        { Description -> "Hypercharge-Coupling"}},
+{g2,        { Description -> "Left-Coupling"}},
+{g3,        { Description -> "Strong-Coupling"}},    
+{AlphaS,    {Description -> "Alpha Strong"}},	
+{e,         { Description -> "electric charge"}}, 
 
-{mu2H,         { Description -> "Mu Doublet H Parameter",
-        LesHouches -> {HMIX,2}}},                                        
+{Gf,        { Description -> "Fermi's constant"}},
+{aEWinv,    { Description -> "inverse weak coupling constant at mZ"}},
 
-{\[Lambda]H,  { Description -> "Higgs Doublet Selfcouplings",
-             (*  DependenceNum -> Mass[hh]^2/(v^2)},*)
-        LesHouches -> {HMIX,1} },
-{mu2Phi,         { Description -> "Mu Real Triplet \[Phi] Parameter",
-        LesHouches -> {HMIX,3}}},                                        
-
-{\[Lambda]phi,  { Description -> "Real Higgs Triplet Selfcouplings",
-        LesHouches -> {HMIX,4} },
-{\[Lambda]Hphi,  { Description -> "H\[Phi] Quartic Coupling",
-        LesHouches -> {HMIX,5} },
-{mu3,         { Description -> "Mu3 Trilinear Parameter",
-        LesHouches -> {HMIX,6}}},                                        
-(*{mu4,         { Description -> "Mu4 Trilinear Parameter",
-        LesHouches -> {HMIX,7}}},                                        
-*)
-{v,          {  LaTeX -> "\nu",
-		Real -> True,
-		OutputName -> v,
-		Description -> "H_VEV",
-               DependenceNum -> Sqrt[4*Mass[VPD]^2/(g^2)],
+{Yu,        { Description -> "Up-Yukawa-Coupling",
+			 DependenceNum ->  Sqrt[2]/v* {{Mass[Fu,1],0,0},
+             									{0, Mass[Fu,2],0},
+             									{0, 0, Mass[Fu,3]}}}}, 
+             									
+{Yd,        { Description -> "Down-Yukawa-Coupling",
+			  DependenceNum ->  Sqrt[2]/v* {{Mass[Fd,1],0,0},
+             									{0, Mass[Fd,2],0},
+             									{0, 0, Mass[Fd,3]}}}},
+             									
+{Ye,        { Description -> "Lepton-Yukawa-Coupling",
+			  DependenceNum ->  Sqrt[2]/v* {{Mass[Fe,1],0,0},
+             									{0, Mass[Fe,2],0},
+             									{0, 0, Mass[Fe,3]}}}}, 
+                                                                            
+                                                                           
+{mu2,         { Description -> "SM Mu Parameter"}},                                        
+{\[Lambda],  { Description -> "SM Higgs Selfcouplings",
+               DependenceNum -> Mass[hh]^2/(v^2)}},
+{v,          { Description -> "EW-VEV",
+               DependenceNum -> Sqrt[4*Mass[VWp]^2/(g2^2)],
                DependenceSPheno -> None  }},
+{mH2,        { Description -> "SM Higgs Mass Parameter"}},
 
-{u,  { LaTeX -> "u",
-        Real -> True,
-        OutputName -> u,
-	Description -> "\[Phi]_VEV",
-	DependenceNum -> Sqrt[(Mass[VWDp]^2-Mass[VPD]^2)/(g^2)],
-        LesHouches -> {HMIX,8} }},
+{ThetaW,    { Description -> "Weinberg-Angle",
+              DependenceNum -> ArcSin[Sqrt[1 - Mass[VWp]^2/Mass[VZ]^2]]  }},
 
-{ZPD, {Description -> "Dark-Photon Mixing Matrix"},
-	Value-> 1},
-{ZWD, {Description -> "A+- Mixing Matrix",
+{ZZ, {Description -> "Photon-Z Mixing Matrix"}},
+{ZW, {Description -> "W Mixing Matrix",
        Dependence ->   1/Sqrt[2] {{1, 1},
                   {\[ImaginaryI],-\[ImaginaryI]}} }},
 
-{UuR1,  { Description->"(Re(Hu),phi1) Scalar-Mixing-Matrix",
-        Real->True,
-        LesHouches -> UuR1,
-        OutputName -> UuR1,
-        LaTeX->"U_{uR1}", 
-        Dependence -> None,
-        DependenceOptional -> None,
-        DependenceNum -> None}},
 
-{UuI2,  { Description->"(Im(Hu),phi2) Pseudo-Scalar-Mixing-Matrix",
-        Real->True,
-        LesHouches -> UuI2,
-        OutputName -> UuI2,
-        LaTeX->"U_{uI2}", 
-        Dependence -> None,
-        DependenceOptional -> None,
-        DependenceNum -> None}},
-	
-{UdR0,  { Description->"(Re(Hd),phi0) Scalar-Mixing-Matrix",
-        Real->True,
-        LesHouches -> UdR0,
-        OutputName -> UdR0,
-        LaTeX->"U_{dR0}", 
-        Dependence -> None,
-        DependenceOptional -> None,
-        DependenceNum -> None}},
+{Vu,        {Description ->"Left-Up-Mixing-Matrix"}},
+{Vd,        {Description ->"Left-Down-Mixing-Matrix"}},
+{Uu,        {Description ->"Right-Up-Mixing-Matrix"}},
+{Ud,        {Description ->"Right-Down-Mixing-Matrix"}}, 
+{Ve,        {Description ->"Left-Lepton-Mixing-Matrix"}},
+{Ue,        {Description ->"Right-Lepton-Mixing-Matrix"}}
+
  }; 
+ 
+
